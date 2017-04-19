@@ -1,0 +1,10 @@
+body{
+		padding-top: 70px;
+	}
+.main{
+	background-image: url("<?php echo base_url('assets/img/selected by freepik.jpg'); ?>");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	
+}

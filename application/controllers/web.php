@@ -1,81 +1,54 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Web extends CI_Controller {
 
-	public function __construct() {
-        parent:: __construct();
-		$this->load->library('grocery_CRUD');
-		$this->load->library('session');
+	public function __construct(){
+		parent::__construct();
 		session_start();
-		if (isset($_SESSION['email_tutor'])) {
-        	redirect('tutor','refresh');
-        }
-    }
-	// BIG MENU
-	public function index(){
-		$this->load->view('web_header');
-		$this->load->view('web_landing');
-		$this->load->view('web_footer');
 	}
 
-	public function cobagrocery()
-	{
-		$crud = new grocery_CRUD();
-
-			$crud->set_theme('datatables');
-			$crud->set_table('tb_siswa');
-			$crud->set_relation('kode_paket','tb_mapel','kode_mapel');
-			$crud->display_as('kode_paket','nama mapel');
-			$crud->set_subject('Siswa');
-			$crud->required_fields('email_siswa');
-
-			$crud->set_field_upload('file_url','assets/uploads/files');
-
-			$output = $crud->render();
-
-		$this->load->view('view_grocey',$output);
-		$this->load->view('web_footer');
+	public function index(){
+		$this->load->view('w_header');
+		$this->load->view('w_index');
+		$this->load->view('w_footer');
 	}
 
 	public function signup(){
-		$this->load->view('web_header');
-		$this->load->view('web_signup');
-		$this->load->view('web_footer');
-		
-		if ($this->input->post('email')) {
-			$add['email_tutor'] = $this->input->post('email');
-			$add['password_tutor'] = $this->input->post('password');
-			$add['nama_tutor'] = $this->input->post('nama');
-			$email = $add['email_tutor'];
-			$count = $this->m_web->count_condition('tb_tutor','email_tutor',$email);
-			if($count==0){
-				$this->m_web->insert_db('tb_tutor',$add);
-				redirect('web/logintutor');
-			}else{
-				redirect('web/signup');
+		if ($this->input->post('signup')) {
+			// get the value from signup form
+			$newtutor['tutor_name'] 		= $this->input->post('name');
+			$newtutor['tutor_username'] 	= $this->input->post('username');
+			$newtutor['tutor_email'] 		= $this->input->post('email');
+			$newtutor['tutor_password'] 	= $this->input->post('password');
+
+			// to make sure the username and email is available
+			$usernamecheck 	= $this->Mweb->availablecheck('t_tutor', 'tutor_username', $newtutor['tutor_username']);
+			$emailcheck 	= $this->Mweb->availablecheck('t_tutor', 'tutor_email', $newtutor['tutor_email']);
+
+			// to check email and username availability
+			if ($usernamecheck!=0 || $emailcheck!=0){ // If username or email is already taken
+				if ($usernamecheck!=0) { // If username is already taken
+					$this->session->set_flashdata('failed', 'Sorry! Username is already taken.');
+				}else{ // If email is already taken
+					$this->session->set_flashdata('failed', 'Sorry! Email is already taken.');
+				}
+				$this->load->view('w_header');
+				$this->load->view('w_index',$newtutor);
+				$this->load->view('w_footer');
 			}
+			else {	//if username and email available
+				$this->Mweb->insert('t_tutor',$newtutor);
+				$this->session->set_flashdata('success', 'Congratulations! You can login with your account now.');
+				redirect(site_url(''),'refresh');
+			}
+
+		// if nothing post
+		}else{
+			redirect(site_url(''),'refresh');
 		}
 	}
-
-
-	public function logintutor()
-	{
-		if ($this->input->post('email')) {
-			$email = $this->input->post('email');
-			$pass = $this->input->post('password');
-			$count = $this->m_web->count_2condition('tb_tutor','email_tutor',$email,'password_tutor',$pass);
-			if($count==0){
-				redirect('web/logintutor');
-			}else{
-				$_SESSION['email_tutor']=$email;
-				$_SESSION['password_tutor']=$pass;
-				redirect('tutor');
-			}
-		}
-		$this->load->view('web_header');
-		$this->load->view('web_logintutor');
-		$this->load->view('web_footer');
-	}
-
-
 }
+
+/* End of file web.php */
+/* Location: ./application/controllers/web.php */

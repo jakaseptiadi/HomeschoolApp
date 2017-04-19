@@ -57,9 +57,7 @@ class Grocery_crud_model  extends CI_Model  {
     	{
     		foreach($this->relation as $relation)
     		{
-    			list($field_name , $related_table , $related_field_title) = 
-
-                $relation;
+    			list($field_name , $related_table , $related_field_title) = $relation;
     			$unique_join_name = $this->_unique_join_name($field_name);
     			$unique_field_name = $this->_unique_field_name($field_name);
 
