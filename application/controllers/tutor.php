@@ -52,9 +52,11 @@ class Tutor extends CI_Controller {
 					// get students data
 					$_SESSION['nav_stulist']	= $this->Mtutor->countdata1c('t_student','tutor_id',$data->tutor_id);
 					$_SESSION['tutor_id']		= $data->tutor_id;
+					$_SESSION['type_id']		= $data->type_id;
 					$_SESSION['tutor_name']		= $data->tutor_name;
 					$_SESSION['tutor_email']	= $data->tutor_email;
 					$_SESSION['tutor_photo']	= $data->tutor_photo;
+					$_SESSION['photo_profile']	= $data->photo_profile;
 
 					redirect('tutor/dashboard','refresh');
 

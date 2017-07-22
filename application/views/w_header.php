@@ -57,7 +57,7 @@
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
 							<li><a href="#signinmodal" data-toggle="modal" data-target="#signinmodal">Signin</a></li>
-							<li><a href="#signupmodal" data-toggle="modal" data-target="#signupmodal"">Signup</a></li>
+							<li><a href="#signupmodal" data-toggle="modal" data-target="#signupmodal">Signup</a></li>
 						</ul>
 					</div>
 				</div>

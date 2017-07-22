@@ -52,12 +52,12 @@
 									<div class="modal fade" id="addfile<?php echo $no; ?>" tabindex="-1" role="dialog" aria-labelledby="Add a File">
 										<div class="modal-dialog" role="document">
 											<div class="modal-content">
+												<form action="<?php echo site_url('tutor/addfile/'.$get_course->course_id.'/'.$get_course->coursebank_id.'/'.$key->skill_id); ?>" method="POST" role="form" enctype="multipart/form-data" />
 												<div class="modal-header">
 													<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 													<h4 class="modal-title" id="myModalLabel">Add a File</h4>
 												</div>
 												<div class="modal-body">
-													<form action="<?php echo site_url('tutor/addfile/'.$get_course->course_id.'/'.$get_course->coursebank_id.'/'.$key->skill_id); ?>" method="POST" role="form" enctype="multipart/form-data" />
 														<div class="form-group">
 															<label class="control-label">Course</label>
 															<p><?php echo $get_course->coursebank_name.' - Grade '.$key->coursebank_level; ?></p>
@@ -74,13 +74,12 @@
 															<label for="file">File</label>
 															<input type="file" name="filename" class="form-control" id="file" placeholder="File">
 														</div>
-														<button type="submit" class="btn btn-primary">Submit</button>
-													</form>
 												</div>
 												<div class="modal-footer">
-													<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-													<button type="button" class="btn btn-primary">Save changes</button>
+													<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+													<button type="button" class="btn btn-primary">Upload Resource</button>
 												</div>
+												</form>
 											</div>
 										</div>
 									</div>
@@ -101,10 +100,11 @@
 									?>
 									<a href="#Skill<?php echo $no; ?>"><?php echo $no.". Ptong stringnya"; ?></a><br>
 									<?php } ?>
-								</div>
 							</div>
 						</div>
 					</div>
+
+				</div>
 				</div>
 			</div>
 		</div>

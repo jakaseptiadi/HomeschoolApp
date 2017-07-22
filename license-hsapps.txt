@@ -1,4 +1,4 @@
-HSApps - A Learning Management System for Homeschool.
+HSApps - A Learning Management System and Social Media for Homeschool.
 
 Copyright (C) 2017 Fitri Ana Dewi.
 

@@ -27,8 +27,10 @@ class Student extends CI_Controller {
 					$data = $this->Mstudent->loginsession('t_student','student_username',$emailorusername,'student_email',$emailorusername,'student_password',$password);
 
 					$_SESSION['student_id']		= $data->student_id;
-					$_SESSION['student_name']		= $data->student_name;
+					$_SESSION['type_id']		= $data->type_id;
+					$_SESSION['student_name']	= $data->student_name;
 					$_SESSION['student_photo']	= $data->student_photo;
+
 
 					redirect('student/dashboard','refresh');
 

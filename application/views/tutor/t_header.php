@@ -108,7 +108,7 @@
 									<li><a href="<?php echo site_url('tutor/profile'); ?>"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
 									<li><a href="<?php echo site_url('tutor/mylog'); ?>"><i class="lnr lnr-book"></i> <span>My Logbook</span></a></li>
 									<li><a href="<?php echo site_url('tutor/help'); ?>"><i class="lnr lnr-question-circle"></i> <span>Help</span></a></li>
-									<li><a href="<?php echo site_url('tutor/community'); ?>"><i class="lnr lnr-envelope"></i> <span>Goto Community (Coming Soon)</span></a></li>
+									<li><a href="<?php echo site_url('z_tutor/profile'); ?>"><i class="lnr lnr-envelope"></i> <span>Goto Community (Coming Soon)</span></a></li>
 									<li><a href="<?php echo site_url('tutor/logout'); ?>"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
 								</ul>
 							</li>

@@ -1,0 +1,20 @@
+UTS PBO C1
+
+Buatlah desain dari beberapa deskripsi berikut (menggunakan konsep inheritance, interface, atau kelas abstrak) dan implmentasikan desain pada bahasa java.
+
+Gedung							Perangkat Pengajaran
+- Nomor gedung						- KodeKategori
+- Nama Gedung						- Jenis
+- Fungsi Gedung						- Kegunaan
+
+Ruangan							Buku
+- Nomor ruangan						- Kode Bku
+- panjang ruangan					- Nudul Bukul
+- Lebar ruangan						- JenisBuku 
+- fungsi ruangan					- Tahun Buku
+
+SPP							Ruang Kelas
+- Nomor Siswa						- Nomor Ruangan
+- Besaran 						- Nama Kelas
+- Bulan							- Kegunaan
+- Tahun

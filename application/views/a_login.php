@@ -20,8 +20,7 @@
 	<link rel="icon" type="image/png'); ?>" sizes="96x96" href="<?php echo base_url('assets/img/favicon.png'); ?>">
 
 	<style type="text/css">
-		body
-		{
+		body{
 			background-image: url("<?php echo base_url('assets/img/selected by freepik.jpg'); ?>");
 			background-color: #ddd;
 			background-size: 100%;
@@ -29,7 +28,6 @@
 			background-repeat: no-repeat;
 			background-attachment: fixed;
 		}
-
 	</style>
 </head>
 

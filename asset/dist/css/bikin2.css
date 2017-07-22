@@ -1,0 +1,43 @@
+/*FORUM*/
+.box-header-forum {
+  color: #FFFFFF;
+  background-color: #3c8dbc;
+  display: block;
+  padding: 10px;
+  position: relative;
+}
+.box-header-forum.with-border {
+  border-bottom: 1px solid #00c0ef;
+}
+.collapsed-box .box-header.with-border {
+  border-bottom: none;
+}
+.box-header-forum > .fa,
+.box-header-forum > .glyphicon,
+.box-header-forum > .ion,
+.box-header-forum .box-title {
+  display: inline-block;
+  font-size: 18px;
+  margin: 0;
+  line-height: 1;
+}
+.box-header-forum > .fa,
+.box-header-forum > .glyphicon,
+.box-header-forum > .ion {
+  margin-right: 5px;
+}
+.box-header-forum > .box-tools {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+.box-header-forum > .box-tools [data-toggle="tooltip"] {
+  position: relative;
+}
+.box-header-forum > .box-tools.pull-right .dropdown-menu {
+  right: 0;
+  left: auto;
+}
+.box-header-forum > .box-tools .dropdown-menu > li > a {
+  color: #444!important;
+}
